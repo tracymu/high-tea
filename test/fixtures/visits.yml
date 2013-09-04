@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  venue: MyString
+  country: MyString
+  date: 2013-08-31
+  price: 1
+  ambience: 1
+  tea: 1
+  scones: 1
+  savoury: 1
+  sweets: 1
+  service: 1
+  bonus: 1
+  comments: MyText
+
+two:
+  venue: MyString
+  country: MyString
+  date: 2013-08-31
+  price: 1
+  ambience: 1
+  tea: 1
+  scones: 1
+  savoury: 1
+  sweets: 1
+  service: 1
+  bonus: 1
+  comments: MyText

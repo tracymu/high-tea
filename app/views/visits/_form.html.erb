@@ -1,0 +1,125 @@
+
+  
+    <%= form_for(@visit) do |f| %>
+      <% if @visit.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@visit.errors.count, "error") %> prohibited this visit from being saved:</h2>
+
+          <ul>
+          <% @visit.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class = "row">
+        <div class = "large-4 columns">
+          <div class="field">
+          <%= f.label :venue %>
+          <%= f.text_field :venue %>
+          </div>
+        </div> 
+      </div>
+
+      
+    
+      <div class="row">
+        <div class = "large-4 columns">
+          <%= f.label :city %>
+          <%= f.text_field :city %>
+        </div>
+      </div>
+
+
+      <div class="row">
+
+        <div class = "large-2 columns">
+          <%= f.label :date, :id => "date_select" %>
+          <%= f.date_select :date, default: Date.today, :start_year => 2005, :end_year => Time.now.year, :class => "right inline" %>
+
+        </div>
+      </div>
+     
+
+
+      <div class = "row">
+        <div class = "large-3 columns">
+          <div class="field">
+            <%= f.label :price %>
+            <%= f.number_field :price %>
+          </div>
+        </div>
+      </div>
+
+      <div class = "row">
+        <div class = "large-1 columns">
+          <div class="field">
+            <%= f.label :ambience %>
+            <%= f.select :ambience, options_for_select([0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5]) %>  
+          </div>
+        </div>
+  
+
+        <div class = "large-1 columns">
+          <div class="field">
+            <%= f.label :tea %>
+            <%= f.select :tea, options_for_select([0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5]) %>
+          </div>
+        </div>
+
+      <div class = "large-1 columns">
+        <div class="field">
+          <%= f.label :scones %>
+          <%= f.select :scones, options_for_select([0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5]) %>  
+        </div>
+      </div>
+
+      <div class = "large-1 columns">
+        <div class="field">
+          <%= f.label :savoury %>
+          <%= f.select :savoury, options_for_select([0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5]) %> 
+        </div>
+      </div>
+
+
+      <div class = "large-1 columns">
+        <div class="field">
+          <%= f.label :sweets %>
+          <%= f.select :sweets, options_for_select([0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5]) %>  
+        </div>
+      </div>
+
+      <div class = "large-1 columns">
+        <div class="field">
+          <%= f.label :service %>
+          <%= f.select :service, options_for_select([0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5]) %> 
+        </div>
+      </div>
+
+      <div class = "large-1 columns">
+        <div class="field">
+          <%= f.label :bonus %>
+          <%= f.select :bonus, options_for_select([0,0.5,1,1.5,2]) %>  
+        </div>
+      </div>
+
+      <div class = "large-5 columns">
+      </div>
+
+    </div>
+
+    <div class = "row">
+      <div class = "large-8 columns">
+        <div class="field">
+          <%= f.label :comments %>
+          <%= f.text_area :comments %>
+        </div>  
+      </div>
+    </div>
+
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  
