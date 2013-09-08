@@ -5,6 +5,10 @@ application up and running.
 
 Things you may want to cover:
 
+I built this high tea app using Ruby 2.0 and Rails 4.0
+
+This app is going to be the new location of all the information collected about High Teas around the world, (moving from a Google doc to this app)
+
 * Ruby version
 
 * System dependencies
