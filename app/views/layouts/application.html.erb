@@ -28,12 +28,27 @@
     </div>
     <div class="large-9 columns">
       <ul class="right button-group">
-      <li><a href="#" class="button">Link 1</a></li>
+
+
+          <% if current_admin %>
+      <li><%= link_to 'Settings', edit_admin_registration_path(current_admin), :class => "button" %></li>
+      <li><%= link_to 'Sign out', destroy_admin_session_path, :method => 'delete', :class => "button" %></li>
+        
+    <% else %>
+      <li><%= link_to 'Sign in', new_admin_session_path, :class => "button" %> </li>
+      <li><%= link_to 'Sign Up', new_admin_registration_path, :class => "button" %></li>
+    <% end %>
+      
       <li><a href="#" class="button">Link 2</a></li>
       <li><a href="#" class="button">Link 3</a></li>
       <li><a href="#" class="button">Link 4</a></li>
       </ul>
      </div>
+    
+<% if notice || alert %>
+  <span class="alert alert-info"><%= notice %></span
+  <span class="alert alert-info"><%= alert %></span>
+<% end %>
    </div>
   
 <!-- End Header and Nav -->

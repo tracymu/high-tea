@@ -36,9 +36,10 @@
   </div>
 </div>
 <br>
+<% if current_admin %>
+<%= link_to 'New Visit', new_visit_path, :class => "button" %>
 
-<%= link_to 'New Visit', new_visit_path, :class => "button radius"%>
-
+<% end %>
 <!-- Three-up Content Blocks -->
  
   <div class="row">

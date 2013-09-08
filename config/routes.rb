@@ -1,4 +1,5 @@
 HighTea::Application.routes.draw do
+  devise_for :admins
   resources :visits
 
   root 'visits#index'

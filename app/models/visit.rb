@@ -2,6 +2,9 @@ class Visit < ActiveRecord::Base
 
 	before_create :set_defaults
 
+	belongs_to :admin
+
+
 	def total_score
 		ambience + tea + sweets + savoury + service + bonus + scones
 	end
