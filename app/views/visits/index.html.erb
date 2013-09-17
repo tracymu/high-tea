@@ -1,5 +1,11 @@
-<h1>Listing visits</h1>
+<h1>High Teas Around The World</h1>
+ <h2>Choose a Venue to see more details</h2>
+<% if current_admin %>
+<%= link_to 'Add a New Visit', new_visit_path, :class => 'small button' %>
+
+<% end %>
 <div class = "row">
+
   <div class = "large-8 columns">
     <table>
       <thead>
@@ -10,9 +16,7 @@
           <th>Price</th>
           
           <th>Total Score</th>
-          <th></th>
-          <th></th>
-          <th></th>
+    
        
         </tr>
       </thead>
@@ -20,50 +24,29 @@
       <tbody>
         <% @visits.each do |visit| %>
           <tr>
-            <td><%= visit.venue %></td>
+            <td><%= link_to visit.venue, visit %></td>
             <td><%= visit.city %></td>
-            <td><%= visit.date %></td>
+            <td><%= visit.formatted_date %></td>
             <td><%= visit.price %></td>
      
             <td><%= visit.total_score %> </td>
-            <td><%= link_to 'Details', visit %></td>
-            <td><%= link_to 'Edit', edit_visit_path(visit) %></td>
-            <td><%= link_to 'Destroy', visit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+   
+
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
-</div>
 <br>
-<% if current_admin %>
-<%= link_to 'New Visit', new_visit_path, :class => "button" %>
-
-<% end %>
-<!-- Three-up Content Blocks -->
  
-  <div class="row">
     <div class="large-4 columns">
-    <%= image_tag("/images/burj.jpg", :alt => "Burj al Arab High Tea") %>
+    <%= image_tag("/images/mariage_freres.jpg", :alt => "Mariage Freres Tea") %>
 
-      <h4>Burj Al Arab</h4>
+      <h4>Mariage Freres, Paris</h4>
       
-    </div>
-    
-     <div class="large-4 columns">
-    <%= image_tag("/images/peninsula.jpg", :alt => "Burj al Arab High Tea") %>
-
-      <h4>Peninsula, Hong Kong </h4>
-      
-    </div>
-    
-    <div class="large-4 columns">
-    <%= image_tag("/images/shanghai.jpg", :alt => "Burj al Arab High Tea") %>
-
-      <h4>Waldorf Astoria, Shanghai</h4>
-      
-    </div>
   
+ 
     </div>
  
+</div>
 

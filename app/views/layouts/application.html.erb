@@ -20,30 +20,44 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
-
-  <div class="row">
-    <div class="large-3 columns">
-      <h1><img src="http://placehold.it/400x100&text=Logo" /></h1>
-    </div>
-    <div class="large-9 columns">
-      <ul class="right button-group">
-
-
-          <% if current_admin %>
-      <li><%= link_to 'Settings', edit_admin_registration_path(current_admin), :class => "button" %></li>
-      <li><%= link_to 'Sign out', destroy_admin_session_path, :method => 'delete', :class => "button" %></li>
-        
-    <% else %>
-      <li><%= link_to 'Sign in', new_admin_session_path, :class => "button" %> </li>
-      <li><%= link_to 'Sign Up', new_admin_registration_path, :class => "button" %></li>
-    <% end %>
-      
-      <li><a href="#" class="button">Link 2</a></li>
-      <li><a href="#" class="button">Link 3</a></li>
-      <li><a href="#" class="button">Link 4</a></li>
+  <body class="antialiased off-canvas hide-extras">
+     <nav class="top-bar hide-for-small">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1><a href="/">High Teas Around The World</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
-     </div>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          
+    
+          <li class="divider"></li>
+       
+          <li class="divider"></li>
+          <li><%= link_to 'Home', root_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to 'Sign in', new_admin_session_path %></li>
+          <li class="divider"></li>
+             <% if current_admin %>
+          <li><%= link_to 'Settings', edit_admin_registration_path(current_admin) %></li>
+          <li class="divider"></li>
+          <li><%= link_to 'Sign out', destroy_admin_session_path, :method => 'delete'%></li>
+          <% end %>
+          
+        </ul>
+      </section>
+    </nav>
+
+
+
+
+      
+
     
 <% if notice || alert %>
   <span class="alert alert-info"><%= notice %></span
@@ -57,6 +71,7 @@
  
   <div class="row">
     <div class="large-12 columns">
+     
      <%= yield %>
     
 
@@ -75,10 +90,8 @@
         </div>
         <div class="large-6 columns">
           <ul class="inline-list right">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
+            <li><a href="https://twitter.com/TracyMuSung", target='_blank'>Contact</a></li>
+           
           </ul>
         </div>
       </div>

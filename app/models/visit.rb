@@ -9,6 +9,11 @@ class Visit < ActiveRecord::Base
 		ambience + tea + sweets + savoury + service + bonus + scones
 	end
 
+	def formatted_date	
+		self.date.strftime "%m-%Y"
+	end
+
+
 private 
 
 	def set_defaults
@@ -20,6 +25,7 @@ private
 		bonus = 0
 		scones = 0
 	end
+
 
 end
 
