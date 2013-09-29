@@ -40,13 +40,15 @@
        
           <li class="divider"></li>
           <li><%= link_to 'Home', root_path %></li>
-          <li class="divider"></li>
-          <li><%= link_to 'Sign in', new_admin_session_path %></li>
-          <li class="divider"></li>
+      
              <% if current_admin %>
           <li><%= link_to 'Settings', edit_admin_registration_path(current_admin) %></li>
           <li class="divider"></li>
           <li><%= link_to 'Sign out', destroy_admin_session_path, :method => 'delete'%></li>
+          <% else %>
+              <li class="divider"></li>
+          <li><%= link_to 'Sign in', new_admin_session_path %></li>
+          <li class="divider"></li>
           <% end %>
           
         </ul>

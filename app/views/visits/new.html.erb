@@ -1,6 +1,8 @@
 <div class="row" class="antialiased off-canvas hide-extras">
 
-  
+  	<% @visit.errors.full_messages.each do |msg| %>
+  			<p class="text-warning"><%= msg %></p>
+			<% end %>
 <h1>New visit</h1>
 <%= render 'form' %>
 
