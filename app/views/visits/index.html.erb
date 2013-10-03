@@ -1,11 +1,12 @@
 <h1>High Teas Around The World</h1>
- <h2>Choose a Venue to see more details</h2>
+
+<h2>Choose a Venue to see more details</h2>
+
 <% if current_admin %>
-<%= link_to 'Add a New Visit', new_visit_path, :class => 'small button' %>
-
+  <h4><%= link_to 'Add a New Visit', new_visit_path, :class => 'small button' %></h4>
 <% end %>
-<div class = "row">
 
+<div class = "row">
   <div class = "large-8 columns">
     <table>
       <thead>
@@ -13,11 +14,8 @@
           <th>Venue</th>
           <th>City</th>
           <th>Date</th>
-          <th>Price</th>
-          
-          <th>Total Score</th>
-    
-       
+          <th>Price</th>          
+          <th>Total Score (Out of 32)</th>           
         </tr>
       </thead>
 
@@ -27,7 +25,7 @@
             <td><%= link_to visit.venue, visit %></td>
             <td><%= visit.city %></td>
             <td><%= visit.formatted_date %></td>
-            <td><%= visit.price %></td>
+            <td><%= visit.price_cents %> <%= visit.price_currency %> </td>
      
             <td><%= visit.total_score %> </td>
    
@@ -37,16 +35,13 @@
       </tbody>
     </table>
   </div>
-<br>
- 
-    <div class="large-4 columns">
-    <%= image_tag("/images/mariage_freres.jpg", :alt => "Mariage Freres Tea") %>
-
-      <h4>Mariage Freres, Paris</h4>
-      
   
- 
-    </div>
+  <br>
+   
+  <div class="large-4 columns">
+    <%= image_tag("/images/mariage_freres.jpg", :alt => "Mariage Freres Tea") %>
+    <h4>Mariage Freres, Paris</h4>
+  </div>
  
 </div>
 

@@ -3,8 +3,9 @@
 <p>
 <H1>  <%= @visit.venue %></H1>
 </p>
-
-<p>
+<div class = "row">
+  <div class = "large-6 columns">
+    <p>
   <strong>Location:</strong>
   <%= @visit.city %>
 </p>
@@ -13,59 +14,70 @@
   <strong>Date:</strong>
   <%= @visit.formatted_date %>
 </p>
-
- <p>
-  <strong>Total Score:</strong>
-  <%= @visit.total_score %> </p>
-
-<p>
   <strong>Price:</strong>
-  <%= @visit.price %>
+ <%= @visit.price_cents %> <%= @visit.price_currency %> 
 </p>
+</div>
+<div class = "large-6 columns">
+ <h3>Total Score</h3>
+  <h2><%= @visit.total_score %> </h2> out of 32
 
-<p>
+
+</div>
+<hr>
+<h4>Score Breakdown</h4>
+<h6>Scores out of 5</h6>
+
+<div class = "row">
+  <div class = "large-2 columns">
   <strong>Ambience:</strong>
   <%= @visit.ambience %>
-</p>
+</div>
 
-<p>
+
+  <div class = "large-2 columns">
   <strong>Tea:</strong>
   <%= @visit.tea %>
-</p>
+</div>
 
-<p>
+  <div class = "large-2 columns">
   <strong>Scones:</strong>
   <%= @visit.scones %>
-</p>
+</div>
 
-<p>
+  <div class = "large-2 columns">
   <strong>Savoury:</strong>
   <%= @visit.savoury %>
-</p>
+</div>
 
-<p>
+  <div class = "large-2 columns">
   <strong>Sweets:</strong>
   <%= @visit.sweets %>
-</p>
+</div>
 
-<p>
+  <div class = "large-2 columns">
   <strong>Service:</strong>
   <%= @visit.service %>
-</p>
-
-<p>
-  <strong>Bonus:</strong>
+</div>
+</div>
+<br>
+<div class = "row">
+  <div class = "large-3 columns">
+  <strong>Bonus (Out of 2):</strong>
   <%= @visit.bonus %>
-</p>
+</div>
+</div>
+<br>
 
-
-
-  <strong>Comments:</strong>
+<div class = "panel">
+  <p><strong>Thoughts</strong></p>
   <%= @visit.comments %>
-</p>
+</div>
+
 
 
 <% if current_admin %>
-<%= link_to 'Edit Listing', edit_visit_path(@visit), :class => 'small button' %> |
+  <%= link_to 'Edit Listing', edit_visit_path(@visit), :class => 'small button' %> |
 <% end %>
+
 <%= link_to 'Back to home', visits_path %>
