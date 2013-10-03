@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130908060537) do
+ActiveRecord::Schema.define(version: 20131002093648) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -35,17 +35,18 @@ ActiveRecord::Schema.define(version: 20130908060537) do
     t.string   "venue"
     t.string   "city"
     t.date     "date"
-    t.decimal  "price",      precision: 7, scale: 2
-    t.decimal  "ambience",   precision: 3, scale: 1
-    t.decimal  "tea",        precision: 3, scale: 1
-    t.decimal  "scones",     precision: 3, scale: 1
-    t.decimal  "savoury",    precision: 3, scale: 1
-    t.decimal  "sweets",     precision: 3, scale: 1
-    t.decimal  "service",    precision: 3, scale: 1
-    t.decimal  "bonus",      precision: 3, scale: 1
+    t.decimal  "ambience",       precision: 3, scale: 1
+    t.decimal  "tea",            precision: 3, scale: 1
+    t.decimal  "scones",         precision: 3, scale: 1
+    t.decimal  "savoury",        precision: 3, scale: 1
+    t.decimal  "sweets",         precision: 3, scale: 1
+    t.decimal  "service",        precision: 3, scale: 1
+    t.decimal  "bonus",          precision: 3, scale: 1
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "price_cents",                            default: 0,     null: false
+    t.string   "price_currency",                         default: "AUD", null: false
   end
 
 end

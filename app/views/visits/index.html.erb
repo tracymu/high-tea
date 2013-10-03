@@ -15,7 +15,7 @@
           <th>Date</th>
           <th>Price</th>
           
-          <th>Total Score</th>
+          <th>Total Score (Out of 32)</th>
     
        
         </tr>
@@ -27,7 +27,7 @@
             <td><%= link_to visit.venue, visit %></td>
             <td><%= visit.city %></td>
             <td><%= visit.formatted_date %></td>
-            <td><%= visit.price %></td>
+            <td><%= visit.price_cents %> <%= visit.price_currency %> </td>
      
             <td><%= visit.total_score %> </td>
    
