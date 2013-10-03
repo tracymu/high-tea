@@ -4,7 +4,6 @@ class CreateVisits < ActiveRecord::Migration
       t.string :venue
       t.string :country
       t.date :date
-      t.integer :price
       t.integer :ambience
       t.integer :tea
       t.integer :scones
