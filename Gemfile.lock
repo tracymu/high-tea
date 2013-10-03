@@ -66,12 +66,6 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25)
     minitest (4.7.5)
-    money (5.1.1)
-      i18n (~> 0.6.0)
-    money-rails (0.8.1)
-      activesupport (>= 3.0)
-      money (~> 5.1.0)
-      railties (>= 3.0)
     multi_json (1.7.9)
     orm_adapter (0.4.0)
     pg (0.16.0)
@@ -151,7 +145,6 @@ DEPENDENCIES
   devise
   jbuilder (~> 1.2)
   jquery-rails
-  money-rails
   pg
   rails (= 4.0.0)
   rails_12factor

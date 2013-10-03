@@ -42,19 +42,28 @@
        
           <li class="divider"></li>
           <li><%= link_to 'Home', root_path %></li>
+<<<<<<< HEAD
 
           <li class="divider"></li>
 
+=======
+          <li class="divider"></li>
+          <li><%= link_to 'Sign in', new_admin_session_path %></li>
+          <li class="divider"></li>
+>>>>>>> 0d452d45e2d4a6166e4f95ded8ac768864322da8
              <% if current_admin %>
           <li><%= link_to 'Settings', edit_admin_registration_path(current_admin) %></li>
           <li class="divider"></li>
           <li><%= link_to 'Sign out', destroy_admin_session_path, :method => 'delete'%></li>
+<<<<<<< HEAD
           <% else %>
               <li class="divider"></li>
           <li><%= link_to 'Sign in', new_admin_session_path %></li>
 
 
           <li class="divider"></li>
+=======
+>>>>>>> 0d452d45e2d4a6166e4f95ded8ac768864322da8
           <% end %>
           
         </ul>

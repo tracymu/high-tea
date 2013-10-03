@@ -39,8 +39,6 @@ end
 
 gem 'simple_form'
 
-gem 'money-rails'
-
 
 group :production do
 	gem 'pg'
