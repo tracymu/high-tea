@@ -6,7 +6,8 @@
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
   <head>
   	<meta charset="utf-8" />
-
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/foundation.css" />
   	<!-- Uncomment to make IE8 render like IE7 -->
   	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
@@ -21,6 +22,7 @@
   </head>
 
   <body class="antialiased off-canvas hide-extras">
+     <div class = "row">
      <nav class="top-bar hide-for-small">
       <ul class="title-area">
         <!-- Title Area -->
@@ -41,17 +43,20 @@
           <li class="divider"></li>
           <li><%= link_to 'Home', root_path %></li>
           <li class="divider"></li>
-          <li><%= link_to 'Sign in', new_admin_session_path %></li>
-          <li class="divider"></li>
+
              <% if current_admin %>
           <li><%= link_to 'Settings', edit_admin_registration_path(current_admin) %></li>
           <li class="divider"></li>
           <li><%= link_to 'Sign out', destroy_admin_session_path, :method => 'delete'%></li>
+          <% else %>
+                    <li><%= link_to 'Sign in', new_admin_session_path %></li>
+          <li class="divider"></li>
           <% end %>
           
         </ul>
       </section>
-    </nav>      
+    </nav>  
+    </div>    
     
 <% if notice || alert %>
   <span class="alert alert-info"><%= notice %></span

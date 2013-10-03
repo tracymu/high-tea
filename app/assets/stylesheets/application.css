@@ -8,7 +8,39 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
+ *= require_self\
+ *= require visits.css.scss
  *= require foundation_and_overrides
  *= require_tree .
  */
+
+button, .button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  padding-top: 0.75em;
+  padding-right: 1.5em;
+  padding-bottom: 0.8125em;
+  padding-left: 1.5em;
+  font-size: 1em;
+  background-color: #000;
+  border-color: #000;
+  color: white; 
+  }
+
+  button a {
+
+  	color: white;
+  }
+
+  tr {
+	font-size: 16px;
+  }
