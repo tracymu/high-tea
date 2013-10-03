@@ -58,14 +58,14 @@
   <%= @visit.bonus %>
 </p>
 
-
-
+<p>
   <strong>Comments:</strong>
   <%= @visit.comments %>
 </p>
 
 
 <% if current_admin %>
-<%= link_to 'Edit Listing', edit_visit_path(@visit), :class => 'small button' %> |
+  <%= link_to 'Edit Listing', edit_visit_path(@visit), :class => 'small button' %> |
 <% end %>
+
 <%= link_to 'Back to home', visits_path %>

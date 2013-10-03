@@ -8,9 +8,7 @@ class Visit < ActiveRecord::Base
 
 	belongs_to :admin
 
-
 	CURRENCIES = %w(AUD USD EUR CNY HKD NZD AED INR GBP AED RUB)
-
 
 	def total_score
 		ambience + tea + sweets + savoury + service + bonus + scones
@@ -19,7 +17,6 @@ class Visit < ActiveRecord::Base
 	def formatted_date	
 		self.date.strftime "%m-%Y"
 	end
-
 
 private 
 
@@ -32,7 +29,6 @@ private
 		bonus = 0
 		scones = 0
 	end
-
 
 end
 
