@@ -33,30 +33,26 @@ MoneyRails.configure do |config|
   #                          null: false,          # other options will be treated as column options
   #                          default: 0
   #                        }
-<<<<<<< HEAD
-  #
-=======
-  # #
->>>>>>> ffd1aad20d1ec8eb071e991672d281cc0af651d0
+
   # config.currency_column = { prefix: '',
   #                            postfix: '_currency',
   #                            column_name: nil,
   #                            type: :string,
   #                            present: true,
   #                            null: false,
-<<<<<<< HEAD
+
   #                            default: 'USD'
   #                          }
 
   # Register a custom currency
   #
-=======
+
   #                            default: 'AUD'
   #                          }
 
   # # Register a custom currency
   # #
->>>>>>> ffd1aad20d1ec8eb071e991672d281cc0af651d0
+
   # Example:
   # config.register_currency = {
   #   :priority            => 1,
