@@ -22,8 +22,8 @@
      
     <div class = "row">
       <div class = "large-3 columns">
-          <%= f.label :price_cents %>
-          <%= f.number_field :price_cents %>
+          <%= f.label "Price" %>
+          <%= f.text_field :price_cents %>
           <%= f.select :price_currency, Visit::CURRENCIES %>
       </div>
     </div>

@@ -2,7 +2,7 @@ class Visit < ActiveRecord::Base
 
 	monetize :price_cents, :with_model_currency => :price_currency
 
-	validates_presence_of :tea, :ambience, :sweets, :savoury, :service, :bonus, :scones, :venue
+	validates_presence_of :tea, :ambience, :sweets, :savoury, :service, :bonus, :scones, :venue, :price
 	
 	before_create :set_defaults
 
