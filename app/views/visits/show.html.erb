@@ -1,35 +1,32 @@
-
-
-<p>
 <H1>  <%= @visit.venue %></H1>
-</p>
+
 <div class = "row">
   <div class = "large-6 columns">
     <p>
-  <strong>Location:</strong>
-  <%= @visit.city %>
-</p>
+      <strong>Location:</strong>
+      <%= @visit.city %>
+    </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @visit.formatted_date %>
-</p>
-  <strong>Price:</strong>
+    <p>
+      <strong>Date:</strong>
+      <%= @visit.formatted_date %>
+    </p>
+  
+    <p><strong>Price:</strong>
 
- <%= @visit.price_cents %> <%= @visit.price_currency %> 
+      <%= @visit.price_cents %> <%= @visit.price_currency %> 
+    </p>
+  </div>
 
-
+  <div class = "large-6 columns">
+    <h3>Total Score</h3>
+    <h2><%= @visit.total_score %> </h2> out of 32
+  </div>
 </div>
-<div class = "large-6 columns">
- <h3>Total Score</h3>
-  <h2><%= @visit.total_score %> </h2> out of 32
-
-
-
-</div>
-<hr>
-<h4>Score Breakdown</h4>
-<h6>Scores out of 5</h6>
+  <hr>
+  
+  <h4>Score Breakdown</h4>
+  <h6>Scores out of 5</h6>
 
 <div class = "row">
   <div class = "large-2 columns">

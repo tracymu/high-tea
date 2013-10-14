@@ -4,7 +4,7 @@
 
     <div class = "row">
       <div class = "large-4 columns">
-           <%= f.input :venue %>
+        <%= f.input :venue %>
       </div> 
     </div>
       
@@ -20,26 +20,21 @@
       </div>
     </div>
      
+    <div class = "row">
+      <div class = "large-2 columns">
+        <%= f.label :price %>
+        <%= f.number_field :price_cents %>
+      </div>
 
+      <div class = "large-2 columns">
+        <%= f.label :currency %>
+        <%= f.select :price_currency, Visit::CURRENCIES %>
+      </div>
 
-      <div class = "row">
-        <div class = "large-2 columns">
-            <%= f.label :price %>
-            <%= f.number_field :price_cents %>
-        </div>
-
-        <div class = "large-2 columns">
-          <%= f.label :currency %>
-          <%= f.select :price_currency, Visit::CURRENCIES %>
-        </div>
-        <div class = "large-2 columns">
-        </div>
+      <div class = "large-2 columns">
+      </div>
      
     </div>
-
-
-
-
 
     <div class = "row">
 
@@ -55,19 +50,14 @@
         <%= f.input :savoury, collection: (0..5).step(0.5).to_a %> 
       </div>
 
-
-
-
       <div class = "large-2 columns">   
         <%= f.input :sweets, collection: (0..5).step(0.5).to_a %>  
       </div>
 
-
       <div class = "large-2 columns">   
-
       </div>
-        <div class = "large-2 columns">
-     
+      
+      <div class = "large-2 columns">
       </div>
   
 
@@ -76,33 +66,24 @@
     </div>
 
 
-<div class = "row">
-        <div class = "large-2 columns">
-            <%= f.input :ambience, collection: (0..5).step(0.5).to_a  %>  
-        
-        </div>
-
-         <div class = "large-2 columns">
-
-
-          <%= f.input :service, collection: (0..5).step(0.5).to_a %> 
-
+    <div class = "row">
+      <div class = "large-2 columns">
+        <%= f.input :ambience, collection: (0..5).step(0.5).to_a  %>      
       </div>
 
-
-     
-    <div class = "large-2 columns">
-          <%= f.input :bonus, collection: (0..2).step(0.5).to_a %>  
-</div>
-
+      <div class = "large-2 columns">
+        <%= f.input :service, collection: (0..5).step(0.5).to_a %> 
+      </div>
+    
+      <div class = "large-2 columns">
+        <%= f.input :bonus, collection: (0..2).step(0.5).to_a %>  
+      </div>
 
       <div class = "large-2 columns"> 
       </div>
         
       <div class = "large-2 columns"> 
       </div>   
-
-
     </div>
 
     <div class = "row">
@@ -114,3 +95,4 @@
     <%= f.button :submit %>
   <% end %>
 </div>
+
