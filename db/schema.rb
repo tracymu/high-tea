@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20130929073644) do
-=======
 ActiveRecord::Schema.define(version: 20131002093648) do
->>>>>>> ffd1aad20d1ec8eb071e991672d281cc0af651d0
-=======
-ActiveRecord::Schema.define(version: 20130908060537) do
->>>>>>> 0d452d45e2d4a6166e4f95ded8ac768864322da8
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -43,21 +35,6 @@ ActiveRecord::Schema.define(version: 20130908060537) do
     t.string   "venue"
     t.string   "city"
     t.date     "date"
-<<<<<<< HEAD
-<<<<<<< HEAD
-    t.integer  "price_cents",    limit: 7
-    t.decimal  "ambience",                 precision: 3, scale: 1
-    t.decimal  "tea",                      precision: 3, scale: 1
-    t.decimal  "scones",                   precision: 3, scale: 1
-    t.decimal  "savoury",                  precision: 3, scale: 1
-    t.decimal  "sweets",                   precision: 3, scale: 1
-    t.decimal  "service",                  precision: 3, scale: 1
-    t.decimal  "bonus",                    precision: 3, scale: 1
-    t.text     "comments"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "price_currency"
-=======
     t.decimal  "ambience",       precision: 3, scale: 1
     t.decimal  "tea",            precision: 3, scale: 1
     t.decimal  "scones",         precision: 3, scale: 1
@@ -70,20 +47,6 @@ ActiveRecord::Schema.define(version: 20130908060537) do
     t.datetime "updated_at"
     t.integer  "price_cents",                            default: 0,     null: false
     t.string   "price_currency",                         default: "AUD", null: false
->>>>>>> ffd1aad20d1ec8eb071e991672d281cc0af651d0
-=======
-    t.decimal  "price",      precision: 7, scale: 2
-    t.decimal  "ambience",   precision: 3, scale: 1
-    t.decimal  "tea",        precision: 3, scale: 1
-    t.decimal  "scones",     precision: 3, scale: 1
-    t.decimal  "savoury",    precision: 3, scale: 1
-    t.decimal  "sweets",     precision: 3, scale: 1
-    t.decimal  "service",    precision: 3, scale: 1
-    t.decimal  "bonus",      precision: 3, scale: 1
-    t.text     "comments"
-    t.datetime "created_at"
-    t.datetime "updated_at"
->>>>>>> 0d452d45e2d4a6166e4f95ded8ac768864322da8
   end
 
 end
