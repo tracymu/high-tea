@@ -10,9 +10,40 @@ class Visit < ActiveRecord::Base
 	belongs_to :admin
 
 
-	CURRENCIES = %w(AUD USD EUR CNY HKD NZD AED INR GBP AED RUB)
+	CURRENCIES = %w(AUD USD EUR CNY HKD NZD AED INR GBP YEN RUB)
 
+	def aud_equivalent
 
+		case price_currency
+		when "AUD"
+			aud_equivalent = price_cents
+		when "USD"
+			aud_equivalent = price_cents/0.96
+		when "EUR"
+			aud_equivalent = price_cents/0.71
+		when "CNY"
+			aud_equivalent = price_cents/5.88
+		when "HKD"
+			aud_equivalent = price_cents/7.48
+		when "NZD"
+			aud_equivalent = price_cents/1.14		
+		when "AED"
+			aud_equivalent = price_cents/6
+		when "INR"
+			aud_equivalent = price_cents/60
+		when "GBP"
+			aud_equivalent = price_cents/0.6
+		when "YEN"
+			aud_equivalent = price_cents/95
+		when "RUB"
+			aud_equivalent = price_cents/31
+		else
+			aud_equivalent = price_cents
+		end
+	
+		aud_equivalent.round(0)			
+
+	end
 
 	def total_score
 		ambience + tea + sweets + savoury + service + bonus + scones

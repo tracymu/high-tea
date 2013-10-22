@@ -15,7 +15,10 @@
     <p><strong>Price:</strong>
 
       <%= @visit.price_cents %> <%= @visit.price_currency %> 
-    </p>
+    <br />
+    <% unless @visit.price_currency == "AUD" %>
+      Or $<%= @visit.aud_equivalent %> AUD</p>
+    <% end %>
   </div>
 
   <div class = "large-6 columns">
