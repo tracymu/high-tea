@@ -10,11 +10,11 @@
     <table>
       <thead>
         <tr>
-          <th width = "200">Venue</th>
-          <th width = "200">Location</th>
-          <th width = "200">Date</th>
-          <th width = "200">Price</th>
-          <th width = "200">Total Score </br>
+          <th width = "200"><%= link_to "Venue", :sort => "venue" %></th>
+          <th width = "200"><%= link_to "Location", :sort => "city" %></th>
+          <th width = "200"><%= link_to "Date", :sort => "date" %></th>
+          <th width = "200"><%= link_to "Price", :sort => "price_cents" %></th>
+          <th width = "200">Total Score</br>
             <em>(out of 32)</em></th>
         </tr>
       </thead>
