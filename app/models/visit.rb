@@ -28,7 +28,7 @@ class Visit < ActiveRecord::Base
 		when "NZD"
 			aud_equivalent = price_cents/1.14		
 		when "AED"
-			aud_equivalent = price_cents/6
+			aud_equivalent = price_cents/3.59
 		when "INR"
 			aud_equivalent = price_cents/60
 		when "GBP"

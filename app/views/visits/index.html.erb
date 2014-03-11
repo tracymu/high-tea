@@ -11,11 +11,11 @@
       <thead>
         <tr>
           <th width = "200">Venue</th>
-          <th width = "200">City</th>
+          <th width = "200">Location</th>
           <th width = "200">Date</th>
-          <th width = "200">Price</th>          
+          <th width = "200">Price</th>
           <th width = "200">Total Score </br>
-            <em>(out of 32)</em></th>           
+            <em>(out of 32)</em></th>
         </tr>
       </thead>
 
@@ -30,19 +30,19 @@
             <td><%= visit.price_cents %> <%= visit.price_currency %> <% unless visit.price_currency == "AUD" %>
               <em>(<%= visit.aud_equivalent %>AUD)</em>
               <% end %>
-              
+
                </td>
-     
+
             <td><%= visit.total_score %> </td>
-   
+
 
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
-  
 
- 
+
+
 </div>
 
