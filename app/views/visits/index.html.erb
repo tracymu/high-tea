@@ -1,4 +1,3 @@
-
 <h3>Choose a Venue to see more details</h3>
 
 <% if current_admin %>
@@ -12,37 +11,26 @@
         <tr>
           <th width = "200"><%= link_to "Venue", :sort => "venue" %></th>
           <th width = "200"><%= link_to "Location", :sort => "city" %></th>
-          <th width = "200"><%= link_to "Date", :sort => "date" %></th>
-          <th width = "200"><%= link_to "Price", :sort => "price_cents" %></th>
+          <th width = "200" class = "show-for-medium-up"><%= link_to "Date", :sort => "date" %></th>
+          <th width = "200" class = "show-for-medium-up"><%= link_to "Price", :sort => "price_cents" %></th>
           <th width = "200">Total Score</br>
             <em>(out of 32)</em></th>
         </tr>
       </thead>
-
       <tbody>
         <% @visits.each do |visit| %>
           <tr>
             <td><%= link_to visit.venue, visit %></td>
             <td><%= visit.city %></td>
-            <td><%= visit.formatted_date %></td>
-
-
-            <td><%= visit.price_cents %> <%= visit.price_currency %> <% unless visit.price_currency == "AUD" %>
-              <em>(<%= visit.aud_equivalent %>AUD)</em>
+            <td class = "hide-for-small"><%= visit.formatted_date %></td>
+            <td class = "hide-for-small"><%= visit.price_cents %> <%= visit.price_currency %> <% unless visit.price_currency == "AUD" %>
+                <em>(<%= visit.aud_equivalent %>AUD)</em>
               <% end %>
-
-               </td>
-
+            </td>
             <td><%= visit.total_score %> </td>
-
-
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
-
-
-
 </div>
-
