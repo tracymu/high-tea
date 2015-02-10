@@ -19,8 +19,8 @@
       </thead>
       <tbody>
         <% @visits.each do |visit| %>
-          <tr>
-            <td><%= link_to visit.venue, visit %></td>
+          <tr data-link= "<%= visit_path(visit) %>">
+            <td><%= visit.venue %></td>
             <td><%= visit.city %></td>
             <td class = "hide-for-small"><%= visit.formatted_date %></td>
             <td class = "hide-for-small"><%= visit.price_cents %> <%= visit.price_currency %> <% unless visit.price_currency == "AUD" %>
