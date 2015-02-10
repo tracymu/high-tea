@@ -19,7 +19,7 @@
       </thead>
       <tbody>
         <% @visits.each do |visit| %>
-          <tr data-link= "<%= visit_path(visit) %>">
+          <tr data-link= "<%= visit_path(visit) %>" class="clickable">
             <td><%= visit.venue %></td>
             <td><%= visit.city %></td>
             <td class = "hide-for-small"><%= visit.formatted_date %></td>
