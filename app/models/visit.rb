@@ -6,6 +6,7 @@ class Visit < ActiveRecord::Base
 	validates_presence_of :tea, :ambience, :sweets, :savoury, :service, :bonus, :scones, :venue, :price
 	
 	before_create :set_defaults
+	before_save :set_total
 
 	belongs_to :admin
 
@@ -65,7 +66,10 @@ private
 		bonus = 0
 		scones = 0
 	end
-
+	
+	def set_total
+		self.total = total_score
+	end
 end
 
 
