@@ -2,8 +2,11 @@ class VisitsController < ApplicationController
   before_action :set_visit, only: [:show, :edit, :update, :destroy]
 
   def index
-    @visits = Visit.order(params[:sort])
-
+    @visits = Visit.order(default_sort)
+  end
+  
+  def default_sort
+    params[:sort] ? "#{params[:sort]} DESC" : 'total DESC'
   end
 
   def show
