@@ -3,7 +3,11 @@
 <% if current_admin %>
   <h5><%= link_to 'Add a New Visit', new_visit_path, :class => 'small button' %></h5>
 <% end %>
-
+<div class = "row">
+  <div class = "large-12 columns">
+    <p>Order by</p>
+  </div>
+</div>
 <div class = "row">
   <div class = "large-12 columns">
     <table>
@@ -13,8 +17,7 @@
           <th width = "200"><%= link_to "Location", :sort => "city" %></th>
           <th width = "200" class = "show-for-medium-up"><%= link_to "Date", :sort => "date" %></th>
           <th width = "200" class = "show-for-medium-up"><%= link_to "Price", :sort => "price_cents" %></th>
-          <th width = "200">Total Score</br>
-            <em>(out of 32)</em></th>
+          <th width = "200"><%= link_to "Total Score", :sort =>"total" %></th>
         </tr>
       </thead>
       <tbody>
@@ -27,7 +30,7 @@
                 <em>(<%= visit.aud_equivalent %>AUD)</em>
               <% end %>
             </td>
-            <td><%= visit.total_score %> </td>
+            <td><%= visit.total %> </td>
           </tr>
         <% end %>
       </tbody>
