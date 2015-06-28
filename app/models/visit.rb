@@ -9,8 +9,9 @@ class Visit < ActiveRecord::Base
 	before_save :set_total
 
 	belongs_to :admin
-
-
+	
+	scope :top_five, ->(column) { order(column).last(5) }
+	
 	CURRENCIES = %w(AUD USD EUR CNY HKD NZD AED INR GBP YEN RUB)
 
 	def aud_equivalent
@@ -54,6 +55,9 @@ class Visit < ActiveRecord::Base
 		self.date.strftime "%m-%Y"
 	end
 
+	def to_s
+		venue
+	end
 
 private 
 

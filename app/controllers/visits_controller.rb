@@ -5,6 +5,10 @@ class VisitsController < ApplicationController
     @visits = Visit.order(default_sort)
   end
   
+  def top_five
+    @topics =  %w(tea ambience service scones savoury sweets)
+  end
+  
   def default_sort
     params[:sort] ? "#{params[:sort]} DESC" : 'total DESC'
   end

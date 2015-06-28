@@ -22,6 +22,7 @@
         <section class="top-bar-section">
           <ul class="right">
             <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Top 5', top_five_path %></li>
             <li class="divider"></li>
             <% if current_admin %>
               <li><%= link_to 'Settings', edit_admin_registration_path(current_admin) %></li>

@@ -1,0 +1,18 @@
+<div class ="row">
+  <p><h2>Top 5 in each Category</h2></p>
+</div>
+<div class = "row">
+  <div class = "large-12 columns">   
+    <% @topics.each do |a| %>
+      <div class = "large-4 columns">
+        <h3><%= a.capitalize %></h3>
+        <ol>
+          <% Visit.top_five(a.to_sym).each do |i| %>
+            <li><%= link_to i.venue, visit_path(i) %> (<%= i.send(a.to_sym) %>)</li>
+          <% end %>
+        </ol>
+      </div>
+    <% end %>
+  </div>
+  <div class="small-3 columns"></div>
+</div>
