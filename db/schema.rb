@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150210073231) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -28,26 +31,24 @@ ActiveRecord::Schema.define(version: 20150210073231) do
     t.datetime "updated_at"
   end
 
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "visits", force: true do |t|
     t.string   "venue"
     t.string   "city"
     t.date     "date"
-    t.decimal  "ambience",       precision: 3, scale: 1
-    t.decimal  "tea",            precision: 3, scale: 1
-    t.decimal  "scones",         precision: 3, scale: 1
-    t.decimal  "savoury",        precision: 3, scale: 1
-    t.decimal  "sweets",         precision: 3, scale: 1
-    t.decimal  "service",        precision: 3, scale: 1
-    t.decimal  "bonus",          precision: 3, scale: 1
+    t.decimal  "ambience",   precision: 3, scale: 1
+    t.decimal  "tea",        precision: 3, scale: 1
+    t.decimal  "scones",     precision: 3, scale: 1
+    t.decimal  "savoury",    precision: 3, scale: 1
+    t.decimal  "sweets",     precision: 3, scale: 1
+    t.decimal  "service",    precision: 3, scale: 1
+    t.decimal  "bonus",      precision: 3, scale: 1
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "price_cents",                            default: 0,     null: false
-    t.string   "price_currency",                         default: "AUD", null: false
-    t.decimal  "total",          precision: 3, scale: 1
+    t.decimal  "total",      precision: 3, scale: 1
   end
 
 end
