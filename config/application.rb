@@ -20,5 +20,10 @@ module HighTea
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+
+    config.action_dispatch.default_headers = {
+        'Access-Control-Allow-Origin' => 'https://s3-ap-southeast-2.amazonaws.com/high-tea/index.html',
+        'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",")
+      }
   end
 end
