@@ -4,7 +4,7 @@ module Api
       respond_to :json
 
       def index
-        render json: Visit.all
+        render json: Visit.order(total: :desc)
       end
     end
 end
