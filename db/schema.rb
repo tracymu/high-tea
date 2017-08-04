@@ -35,19 +35,17 @@ ActiveRecord::Schema.define(version: 20150210073231) do
     t.string   "venue"
     t.string   "city"
     t.date     "date"
-    t.decimal  "ambience",       precision: 3, scale: 1
-    t.decimal  "tea",            precision: 3, scale: 1
-    t.decimal  "scones",         precision: 3, scale: 1
-    t.decimal  "savoury",        precision: 3, scale: 1
-    t.decimal  "sweets",         precision: 3, scale: 1
-    t.decimal  "service",        precision: 3, scale: 1
-    t.decimal  "bonus",          precision: 3, scale: 1
+    t.decimal  "ambience",   precision: 3, scale: 1
+    t.decimal  "tea",        precision: 3, scale: 1
+    t.decimal  "scones",     precision: 3, scale: 1
+    t.decimal  "savoury",    precision: 3, scale: 1
+    t.decimal  "sweets",     precision: 3, scale: 1
+    t.decimal  "service",    precision: 3, scale: 1
+    t.decimal  "bonus",      precision: 3, scale: 1
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "price_cents",                            default: 0,     null: false
-    t.string   "price_currency",                         default: "AUD", null: false
-    t.decimal  "total",          precision: 3, scale: 1
+    t.decimal  "total",      precision: 3, scale: 1
   end
 
 end
